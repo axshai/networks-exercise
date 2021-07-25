@@ -3,6 +3,7 @@ my_input=""
 my_socket = socket.socket()
 my_socket.connect(("127.0.0.1", 8820))
 
+
 while True:
     my_input=input("enter your request\n")
     my_socket.send(my_input.encode())
