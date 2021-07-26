@@ -13,7 +13,10 @@ def main():
     domain=sys.argv[1]
     dns_packet =IP(dst='8.8.8.8')/UDP(sport=24601,dport=53)/DNS(qdcount=1 ,rd=1 )/DNSQR(qname=domain)
     response_packet = sr1(dns_packet)
-    print(response_packet[DNS][2].rdata)
+    r_num=response_packet[DNS].ancount
+    for r in range(r_num):
+        print(response_packet[DNS][DNSRR][r].rdata)
+
 
 
 
