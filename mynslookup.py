@@ -4,7 +4,6 @@ from scapy.layers.dns import DNS, DNSQR, DNSRR
 from scapy.layers.inet import IP, UDP
 from scapy.sendrecv import sr1
 
-
 def main():
     """
     act like nslookup

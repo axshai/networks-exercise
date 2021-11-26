@@ -6,4 +6,5 @@ data = client_name.decode()
 response = "Hello " + data
 server_socket.sendto(response.encode(), client_address)
 server_socket.close()
+print(client_address)
 

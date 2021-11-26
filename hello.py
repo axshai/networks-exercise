@@ -2,20 +2,10 @@
 import os
 import msvcrt
 import sys
+import pyautogui
 
 
-def main():
-    ss=""
-    x=""
-    s=0
-    print("ggf")
-    while x!="\r":
-        if msvcrt.kbhit():
-            print("true")
-            x=msvcrt.getch()
-            print(x)
+import pyautogui
 
-    print(ss)
-
-
-main()
+myScreenshot = pyautogui.screenshot()
+myScreenshot.save(r'C:\sisi.png')
