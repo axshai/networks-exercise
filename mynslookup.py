@@ -68,7 +68,10 @@ def main():
         print("wrong parameters")
         exit()
     dns_packet = creates_packet(p_type, dom_or_ip)
-    response_packet = sr1(dns_packet, verbose=0)
+    response_packet = sr1(dns_packet, verbose=0, timeout=2)
+    if response_packet == None:
+        print("something got wrong")
+        exit()
     if response_packet[DNS].rcode == ERROR_CODE:
         print("No such name")
         exit()
@@ -76,7 +79,7 @@ def main():
     for r in range(r_num):
         response = response_packet[DNS][DNSRR][r].rdata
         if isinstance(response, bytes):
-            print(response.decode())
+            print(response.decode()[:-1])
         else:
             print(response)
 
