@@ -52,6 +52,9 @@ def printsum(num):
 
 
 def main():
+    """
+    main func
+    """
     runasserts()
     num = doinput()
     print("You entered the number: {}".format(num))
